@@ -1,0 +1,19 @@
+import cs1.SimpleURLReader;
+/**
+ * The test class of the Lab02
+ * @author Onur Ertunc
+ * @version 23.10.2020
+ */
+public class Test {
+  public static void main( String[] args ) {
+    
+    // Variables
+    String link = "http://www.cs.bilkent.edu.tr/~ozturk/cs102/scrapethissite.html";
+    
+    // Program Code & Test Cases
+    
+    // Part B Testing MySimpleURLReader
+    MySimpleURLReader reader = new MySimpleURLReader( link );
+    System.out.println( reader.getURL() );
+  }
+}

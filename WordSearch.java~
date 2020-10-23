@@ -1,0 +1,45 @@
+import cs1.SimpleURLReader;
+import java.util.ArrayList;
+/**
+ * 
+ * @author Onur Ertunc
+ * @version 23.10.2020
+ */
+public class WordSearch extends HTMLFilteredReader {
+  
+  /**
+   * constructor of the class WordSearch
+   * @param url
+   */
+  public WordSearch( String url ) {
+    super( url );
+  }
+  
+  /**
+   * the method wordSearch finds the given word on the content if it is available,
+   * @param String word
+   */
+  public void wordSearch( String word ) {
+    String content = super.getPageContents();
+    ArrayList<Integer> pos = new ArrayList<Integer>();
+    int count;
+    //int currentLocation = 0;
+    for ( int i = 0; i < content.length(); i++ ) {
+      if ( pos.size() == 0 ) {
+        pos.add( content.indexOf( word ) );
+      }
+      else {
+        pos.add( content.indexOf( word, i ) );
+      }
+    }
+    count = pos.size();
+    
+    if ( pos.size() == 0 ) {
+      System.out.println( "The word is not found on the content." );
+    }
+    else {
+      System.out.println( "The word " + word + " is found on the text " + count + " times." );
+      System.out.println( "The positions of the word: " + pos.toString() );
+    }
+  }
+}

@@ -1,0 +1,14 @@
+public class HTMLFilteredReader extends MySimpleURLReader {
+  
+  /**
+   * Constructor of the HTMLFilteredReader class
+   * @param url
+   */
+  public HTMLFilteredReader( String url ) {
+    super( url );
+  }
+  
+  public String getUnfilteredPageContents() {
+    return super.getPageContents().substring(4);
+  }
+}
